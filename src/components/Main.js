@@ -7,19 +7,19 @@ import MenuTop from './MenuTop';
 import TodoList from './TodoList';
 
 const Main = ({ logged }) => (
-  <div style={{padding: '4px'}}>
-    {!logged && <Redirect to='/login' />}
+  <div style={{ padding: '4px' }}>
+    {!logged && <Redirect to="/login" />}
     <MenuTop />
     <TodoList />
   </div>
-)
+);
 
 Main.propTypes = {
-  logged: PropTypes.bool
-}
+  logged: PropTypes.bool.isRequired,
+};
 
 const mapStateToProps = state => ({
-  logged: state.user.logged
-})
+  logged: state.user.logged,
+});
 
 export default connect(mapStateToProps)(Main);

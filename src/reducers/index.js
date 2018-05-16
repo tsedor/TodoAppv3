@@ -5,7 +5,7 @@ import todos from './todos';
 
 const reducers = combineReducers({
   user,
-  todos
+  todos,
 });
 
 export default reducers;

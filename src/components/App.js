@@ -20,11 +20,11 @@ const App = () => (
   <Provider store={store}>
     <Router>
       <Switch>
-        <Route path='/' exact component={Main} />
-        <Route path='/login' component={LoginForm} />
+        <Route path="/" exact component={Main} />
+        <Route path="/login" component={LoginForm} />
       </Switch>
     </Router>
   </Provider>
-)
+);
 
 export default App;
