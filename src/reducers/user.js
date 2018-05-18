@@ -1,9 +1,9 @@
-import { LOGIN_REQUEST, LOGIN_ERROR, LOGIN_SUCCESS, LOGOUT, PASSWORD_INPUT_CHANGE } from '../actions/const';
+import { LOGIN_REQUEST, LOGIN_ERROR, LOGIN_SUCCESS, LOGOUT } from '../actions/const';
 
 const token = localStorage.getItem('token');
 
 const initialState = {
-  logged: token.length > 1,
+  logged: Boolean(token),
   request: false,
   error: false,
   passwordInputValue: '',
@@ -22,8 +22,6 @@ const user = (state = initialState, action) => {
       };
     case LOGOUT:
       return { ...state, logged: false, token: '' };
-    case PASSWORD_INPUT_CHANGE:
-      return { ...state, passwordInputValue: action.value };
     default:
       return state;
   }

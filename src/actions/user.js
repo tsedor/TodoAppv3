@@ -1,10 +1,8 @@
-import { LOGIN_REQUEST, PASSWORD_INPUT_CHANGE } from './const';
+import { LOGIN_REQUEST } from './const';
 
-export const loginRequest = () => ({
+const loginRequest = password => ({
   type: LOGIN_REQUEST,
+  password,
 });
 
-export const passwordInputChange = value => ({
-  type: PASSWORD_INPUT_CHANGE,
-  value,
-});
+export default loginRequest;

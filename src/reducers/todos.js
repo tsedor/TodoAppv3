@@ -1,6 +1,5 @@
 import {
   ADD_TODO,
-  ADD_TODO_INPUT_UPDATE,
   FETCH_TODOS_SUCCESS,
   REMOVE_TODO,
   SORT,
@@ -12,7 +11,6 @@ import {
 } from '../actions/const';
 
 const initialState = {
-  addTodoValue: '',
   filter: {
     active: true,
     completed: true,
@@ -37,8 +35,6 @@ const todos = (state = initialState, action) => {
       todosList.map(todo => todo.id > maxId && (maxId = todo.id));
       todosList.push({ id: maxId += 1, text: action.text, done: false });
       return { ...state, todos: todosList, visibilityAddTodoModal: false };
-    case ADD_TODO_INPUT_UPDATE:
-      return { ...state, addTodoValue: action.value };
     case FETCH_TODOS_SUCCESS:
       return { ...state, todos: action.todos };
     case SORT:
@@ -54,7 +50,7 @@ const todos = (state = initialState, action) => {
     case TOGGLE_TODO:
       return { ...state, todos: toggleTodo(state.todos, action.id) };
     case UPDATE_SEARCH_VALUE:
-      return { ...state, searchValue: action.value };
+      return { ...state, searchValue: action.text };
     default:
       return state;
   }

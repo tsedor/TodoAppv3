@@ -1,1 +1,5 @@
-export const host = 'https://todo1.sedor.pl';
+const settings = {
+  host: 'https://todo1.sedor.pl',
+};
+
+export default settings;

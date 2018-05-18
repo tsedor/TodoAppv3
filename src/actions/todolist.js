@@ -1,6 +1,5 @@
 import {
   ADD_TODO,
-  ADD_TODO_INPUT_UPDATE,
   FETCH_TODOS,
   REMOVE_TODO,
   SORT,
@@ -14,11 +13,6 @@ import {
 export const addTodo = text => ({
   type: ADD_TODO,
   text,
-});
-
-export const addTodoInputUpdate = value => ({
-  type: ADD_TODO_INPUT_UPDATE,
-  value,
 });
 
 export const fetchTodos = () => ({
@@ -53,5 +47,5 @@ export const toggleTodo = id => ({
 
 export const updateSearchValue = value => ({
   type: UPDATE_SEARCH_VALUE,
-  value,
+  text: value.target.value,
 });

@@ -34,7 +34,8 @@ const MenuTop = ({
           transparent
           icon={{ name: 'search' }}
           placeholder="Szukaj..."
-          onChange={e => updateSearchValue(e.target.value)}
+          onChange={updateSearchValue}
+          style={{ width: '125px' }}
         />
       </Menu.Item>
     </Menu.Menu>
